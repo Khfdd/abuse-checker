@@ -22,7 +22,7 @@ class GeoAnalyzers:
                     i.city.name for i in (
                         maxmind_reader.city(ip)
                         for ip in data.sessions
-                    ) if i.city.name and i.country.iso_code == "RU"
+                    ) if i.city.name
                 }
                 logger.info("For user %s founded %s cites. Hwid_limit: %s",
                             user_id, ", ".join(cites), data.hwid_limit)
